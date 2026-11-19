@@ -55,7 +55,7 @@ with st.sidebar:
     age = st.select_slider("Age (Gyr)", options=AGES, value=0.5)
     metal = st.select_slider("Metallicity [M/H]", options=METALS, value=-1.5)
     mu = st.slider("Distance modulus (mag)", min_value=5.0, max_value=22.0,
-                   value=15.0 if cluster == "Cluster 1" else 18.5, step=0.1)
+                   value=11.0, step=0.1)
     show_iso = st.checkbox("Show theoretical isochrone", value=True)
     show_points = st.checkbox("Show model points", value=False)
     max_stars = st.slider("Observed stars displayed", 500, 50000, 12000, 500)
