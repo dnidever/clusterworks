@@ -76,7 +76,7 @@ if len(valid) > max_stars:
 left, right = st.columns([1.65, 1], gap="large")
 with left:
     st.subheader(f"{cluster}: Color–magnitude diagram")
-    fig, ax = plt.subplots(figsize=(7, 7.5), constrained_layout=True)
+    fig, ax = plt.subplots(figsize=(5.4, 5.7), constrained_layout=True)
     ax.scatter(b[valid] - v[valid], v[valid], s=2, alpha=0.28,
                color="#526477", rasterized=True, label="Observed stars")
     bi, vi = models[(age, metal)]
@@ -96,7 +96,7 @@ with left:
     ax.invert_yaxis() if not ax.yaxis_inverted() else None
     ax.grid(alpha=0.16)
     ax.legend(loc="best", fontsize=9, markerscale=3)
-    st.pyplot(fig, clear_figure=True)
+    st.pyplot(fig, clear_figure=True, use_container_width=False)
 with right:
     st.subheader("Your current fit")
     st.metric("Age", f"{age:g} Gyr")
